@@ -15,12 +15,7 @@ function displayDate() {
 }
 
 function show() {
-    document.getElementById("myDiv").style.display = "block";
-    setTimeout("hide()", 2000);
-}
-
-function hide() {
-    document.getElementById("myDiv").style.display = "none";
+    setTimeout(function () {document.getElementById('logoAndLabel').style.display='none'}, 2000);
 }
 
 function getCategories() {
@@ -32,7 +27,7 @@ var contentCategoryArray = new Array;
 
 function getCategoriesArrayValues() {
 
-    var userCategories = [["Persönliches", "Hunderunde", "Mich einkaufen", "Paket abholen"],["Arbeit", "HalloWelt " +
+    var userCategoriesArray = [["Persönliches", "Hunderunde", "Mich einkaufen", "Paket abholen"],["Arbeit", "HalloWelt",
      "Präsentation"]];
 /***das sind Testwerte****/
   //  var userCategoriesArray = getCategories();
@@ -100,6 +95,9 @@ function chooseWhichCategoryToDisplay(index) {
 function main() {
     displayDate();
     show();
+    writeCategoryValuesIntoHTML();
+    addDefaultNewCategoryObject();
+    chooseWhichCategoryToDisplay(0);
 }
 
 function changeBackgroundImage() {
@@ -119,7 +117,6 @@ function changeBackgroundImage() {
             document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1518023176010-e14eb57eecf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe2f72ca42e6478bc869b8325881fa46&auto=format&fit=crop&w=1350&q=80')";
             break;
     }
-
 }
 
 window.onload = main();
