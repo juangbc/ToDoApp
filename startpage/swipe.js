@@ -3,7 +3,6 @@ centralDisplay.addEventListener("touchmove", moveTouch, false);
 
 var categoryIndex = [0];
 
-// Swipe Up / Down / Left / Right
 var initialX = null;
 
 function startTouch(e) {
@@ -29,11 +28,11 @@ function moveTouch(e) {
             categoryIndex[0]++;
         }
         chooseWhichCategoryToDisplay(categoryIndex[0]);
-        }
     }
+}
 
 initialX = null;
-  //  e.preventDefault();
+centralDisplay.preventDefault();
 
 
 
