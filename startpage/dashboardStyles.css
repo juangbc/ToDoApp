@@ -1,0 +1,112 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    color: black;
+    font: normal 2vw Helvetica;
+    margin-bottom: 0%;
+}
+
+h2 {
+    color: #666666;
+    font: normal 1vw Helvetica;
+    display: inline;
+
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-image : url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80');
+    background-size: cover;
+}
+
+.viewport {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+
+#kategorie1 {
+    border-radius: 1%;
+    background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    width: 20%;
+    height: 50%;
+    margin-left: 0px;
+    float: left;
+    top: 30%;
+}
+
+.category {
+    margin-top: 20%;
+}
+
+.category-title {
+    color: white;
+    font: 1.5vw Helvetica;
+}
+
+.tasks-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 15%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    font-size: 1.5vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.tasks-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background-color: white;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 25%;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.tasks-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.tasks-checkbox .checkmark:after {
+    left: 3%;
+    top: 5px;
+    /*width: 5px;
+    height: 10px;*/
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 1.3em;
+    height: 1.3em;
+}

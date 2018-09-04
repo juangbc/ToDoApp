@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="dashboardStyles.css">
+</head>
+<body>
+<div class = "container">
+    <div class ="viewport">
+        <div class="datum-block">
+            <h1 id ="wochentag">Montag</h1>
+            <h2 id ="tag" class ="datum-untere-reihe">19.</h2>
+            <h2 id ="monat" class ="datum-untere-reihe">März</h2>
+        </div>
+        <div id ="kategorie1" class="category">
+            <h3 class ="category-title">Persönliches</h3>
+            <label class = "tasks-checkbox">
+                <input type="checkbox" name="Aufgabe1">Hunderunde
+                <span class="checkmark"></span>
+            </label>
+            <label class = "tasks-checkbox">Milch einkaufen
+                <input type="checkbox" name="Aufgabe2" value="Car">
+                <span class="checkmark"></span>
+            </label>
+            <label class = "tasks-checkbox">Paket abholen
+                <input type="checkbox" name="Aufgabe3" value="Boat">
+                <span class="checkmark"></span>
+            </label>
+            <div class = "footer-kategorie">
+                <button type="button">+ NEUE AUFGABE</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
