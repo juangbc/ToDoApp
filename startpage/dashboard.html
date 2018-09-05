@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="dashboardStyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 <div class = "container">
@@ -14,24 +15,31 @@
             <h2 id ="tag" class ="datum-untere-reihe">19.</h2>
             <h2 id ="monat" class ="datum-untere-reihe">März</h2>
         </div>
-        <div id ="kategorie1" class="category">
+        <div class="category">
+        <div id ="kategorie1">
             <h3 class ="category-title">Persönliches</h3>
             <label class = "tasks-checkbox">
-                <input type="checkbox" name="Aufgabe1">Hunderunde
-                <span class="checkmark"></span>
+                <input type="checkbox" name="Aufgabe1">
+                <span class="checkmark">
+                </span>
+                <label class="strikethrough">Hunderunde</label>
             </label>
-            <label class = "tasks-checkbox">Milch einkaufen
+            <label class = "tasks-checkbox">
                 <input type="checkbox" name="Aufgabe2" value="Car">
                 <span class="checkmark"></span>
+                <label class="strikethrough">Milch einkaufen</label>
             </label>
-            <label class = "tasks-checkbox">Paket abholen
+            <label class = "tasks-checkbox">
                 <input type="checkbox" name="Aufgabe3" value="Boat">
                 <span class="checkmark"></span>
+                <label class="strikethrough">Paket abholen</label>
+                <i class="material-icons">delete</i>
             </label>
             <div class = "footer-kategorie">
-                <button type="button">+ NEUE AUFGABE</button>
+                <button type="button" id ="button">+ NEUE AUFGABE</button>
             </div>
         </div>
+    </div>
     </div>
 </div>
 </body>
