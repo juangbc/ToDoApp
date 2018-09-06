@@ -33,7 +33,7 @@ h2 {
     top: 5%;
 }
 
-#kategorie1 {
+.category1 {
     border-radius: 3%;
     background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
@@ -41,13 +41,27 @@ h2 {
     height: 80%;
     margin-left: 10%;
     float: left;
-    top: 20%;
+    position: absolute;
 }
 
-.category {
-    margin-top: 10%;
-    width: 100%;
-    height: 90%;
+.category2 {
+    border-radius: 3%;
+    background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    width: 25%;
+    height: 80%;
+    margin-left: 40%;
+    float: left;
+    position: absolute;
+
+}
+
+.container-category {
+    margin-left: 5%;
+    width: 80%;
+    height: 70%;
+    position: relative;
+    top: 30%;
 }
 
 .category-title {
@@ -60,7 +74,7 @@ h2 {
 .tasks-checkbox {
     display: block;
     position: relative;
-    padding-left: 16%;
+    padding-left: 20%;
     color: white;
     margin-bottom: 5%;
     cursor: pointer;
@@ -107,8 +121,12 @@ h2 {
     text-decoration: line-through;
 }
 
-
-
+.tasks-checkbox input:checked ~ .material-icons {
+    display: inline;
+    float: right;
+    padding-right: 10%;
+    font-size: 1vw;
+}
 
 /* Style the checkmark/indicator */
 .tasks-checkbox .checkmark:after {
@@ -124,29 +142,60 @@ h2 {
 }
 
 .footer-kategorie {
-width: 50%;
-    margin-top: 70%;
+    border: solid rgba(255, 255, 255, .2);
+    border-width: 0.08em 0px 0px 0px;
+    position: absolute;
+    top: 85%;
     width: 100%;
-    height: 30%;
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: rgb(255, 255, 255);
+    height: 15%;
 }
 
-#button {
+.footer-button {
     margin-top: 10%;
-font-size: 1vw;
-color: white;
-background-color: Transparent;
-background-repeat:no-repeat;
-border: none;
-cursor:pointer;
-overflow: hidden;
+    font-size: 0.9vw;
+    color: white;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
     margin-left: 25%;
-    width: 50%;
+    max-width: 50%;
 }
-
 
 .material-icons {
-    display:none;
+display:none;
 }
+
+.boxxx {
+    display: block;
+}
+
+.tasks-checkbox input:checked ~ .boxxx {
+    color: red;
+    border: solid;
+    border-width: 0.1px;
+    display: inline;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    position: absolute;
+}
+
+
+div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+/*
+</style>
+  </head>
+    <body>
+
+    <p>A menu icon:</p>
+
+                     <div></div>
+                            <div></div>
+                                   <div></div>*/
