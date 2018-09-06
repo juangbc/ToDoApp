@@ -35,4 +35,3 @@ initialX = null;
 centralDisplay.preventDefault();
 
 
-
