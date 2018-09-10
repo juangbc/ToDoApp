@@ -17,9 +17,7 @@ body, html {
 }
 
 .container {
-    background-image : url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80');
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
     background-size: cover;
     height: 100%;
     position: relative;
@@ -175,7 +173,7 @@ body, html {
 }
 
 .material-icons {
-display:none;
+    display:none;
 }
 
 .first-category .tasks-checkbox:hover {
