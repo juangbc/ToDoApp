@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+.weekday {
+    color: black;
+    font: normal 36px Helvetica;
+    margin-bottom: 0%;
+}
+
+.date {
+    color: #666666;
+    font: normal 24px Helvetica;
+    display: inline;
+
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
+    background-size: cover;
+    height: 100%;
+    padding: 2em;
+}
+
+.flex-container2 {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    color: white;
+    font-family: Helvetica;
+    height: 70%;
+
+}
+
+.column {
+    align-self: stretch;
+    border-radius: 3%;
+    max-height: 90%;
+    height: 40em;
+    width: 28em;
+    padding: 2em;
+    margin: 1%;
+}
+
+
+.column-1 {
+    background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+    box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
+}
+
+
+.column-2 {
+    background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
+}
+
+
+.column-3 {
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 #000000;
+}
+
+@media (max-width: 1512px) {
+    .column {
+
+    }
+
+    .flex-container2 {
+        flex-direction: column;
+        height: 70%;
+        max-width: 80%;
+    }
+}
+
+.bin {
+    display:none;
+}
+
+.tasks-checkbox input:checked ~.check1 .bin {
+    font-size: 20px;
+    display: inline-flex;
+    left: 30%;
+    float: right;
+    padding-right: 2%;
+}
+
+.tasks-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tasks-checkbox {
+    width: 100%;
+}
+
+.checkmark {
+    position: absolute;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background-color: white;
+    width: 1em;
+    height: 1em;
+    border-radius: 25%;
+}
+
+.checkmark {
+    content: "";
+    position: absolute;
+    display: block;
+}
+
+.tasks-checkbox input:checked ~ .task-name {
+    text-decoration: line-through;
+    color: white;
+}
+
+.check-icon {
+    font-size: 1em;
+    color: black;
+    display: none;
+}
+
+.tasks-checkbox input:checked ~ .checkmark .check-icon{
+    display: block;
+}
+
+.task-name {
+    padding-left: 2em;
+    font-size: 1em;
+    position: absolute;
+}
+
+.task {
+    padding-bottom: 2em;
+
+}
+
+.category-title {
+    padding-bottom: 2em;
+    font-size: 1.5em;
+
+}
+
+.footer-category {
+    border: solid rgba(255, 255, 255, .2);
+    border-width: 0.08em 0px 0px 0px;
+    width: 28em;
+    margin-left: -2em;
+}
+
+.footer-button {
+    font-size: 1em;
+    color: white;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 1em;
+    display: block;
+}
+
+.container-topleft {
+    padding: 1em;
+}
+
+.ckbox {
+    fill: white;
+}
+
+.upper-part {
+    height: 90%;
+}
+
+.new-category-button-plus-sign {
+    margin: 0 auto;
+}
+
+.new-category-button-text {
+    margin: 0 auto;
+}
+
+.new-centered-element {
+    color: #666666;
+    display: block;
+    width: 20em;
+    margin: 45% auto;
+}
