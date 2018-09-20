@@ -25,17 +25,19 @@ body {
     background-size: cover;
     height: 100%;
     padding: 2em;
+    width: 100%;
+    overflow: hidden;
 }
 
-.flex-container2 {
-
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     color: white;
     font-family: Helvetica;
     height: 70%;
-
+    width: 100%;
+    overflow: auto;
 }
 
 .column {
@@ -43,15 +45,14 @@ body {
     border-radius: 3%;
     max-height: 90%;
     height: 40em;
-    width: 28em;
-    padding: 2em;
+    width: 26em;
     margin: 1%;
+    box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
 }
 
 
 .column-1 {
     background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
-    box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
 }
 
 
@@ -62,18 +63,32 @@ body {
 
 .column-3 {
     background-color: #FFFFFF;
-    box-shadow: 0 10px 20px 0 #000000;
+    display: flex;
+    justify-content:  center;
+    align-items:  center;
 }
 
 @media (max-width: 1512px) {
     .column {
-
+        width: 50%;
+        max-width:  28em;
     }
 
-    .flex-container2 {
+    .flex-container {
         flex-direction: column;
         height: 70%;
-        max-width: 80%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .column {
+        width: 100%;
+        max-width:  28em;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        height: 70%;
     }
 }
 
@@ -81,7 +96,7 @@ body {
     display:none;
 }
 
-.tasks-checkbox input:checked ~.check1 .bin {
+.task-checkbox-label input:checked ~.bin-icon-container .bin {
     font-size: 20px;
     display: inline-flex;
     left: 30%;
@@ -89,13 +104,13 @@ body {
     padding-right: 2%;
 }
 
-.tasks-checkbox input {
+.task-checkbox-label input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
-.tasks-checkbox {
+.task-checkbox-label {
     width: 100%;
 }
 
@@ -115,7 +130,7 @@ body {
     display: block;
 }
 
-.tasks-checkbox input:checked ~ .task-name {
+.task-checkbox-label input:checked ~ .task-name {
     text-decoration: line-through;
     color: white;
 }
@@ -126,7 +141,7 @@ body {
     display: none;
 }
 
-.tasks-checkbox input:checked ~ .checkmark .check-icon{
+.task-checkbox-label input:checked ~ .checkmark .check-icon{
     display: block;
 }
 
@@ -138,20 +153,23 @@ body {
 
 .task {
     padding-bottom: 2em;
-
+    position:  relative;
 }
 
 .category-title {
     padding-bottom: 2em;
     font-size: 1.5em;
-
+    font-weight:  100;
 }
 
 .footer-category {
     border: solid rgba(255, 255, 255, .2);
     border-width: 0.08em 0px 0px 0px;
-    width: 28em;
-    margin-left: -2em;
+    width: 100%;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
 }
 
 .footer-button {
@@ -162,9 +180,7 @@ body {
     border: none;
     cursor: pointer;
     overflow: hidden;
-    margin: 0 auto;
-    padding-top: 1em;
-    display: block;
+    justify-content:  center;
 }
 
 .container-topleft {
@@ -175,21 +191,56 @@ body {
     fill: white;
 }
 
-.upper-part {
+.column-upper-part {
     height: 90%;
+    padding: 2em;
 }
 
 .new-category-button-plus-sign {
-    margin: 0 auto;
+    font-family: Helvetica;
+    font-size: 3em;
+    padding-bottom: 0;
+    font-weight: 100;
+    margin-bottom: 0%;
 }
 
 .new-category-button-text {
-    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: 100;
 }
 
-.new-centered-element {
+.column-3-centered-container {
     color: #666666;
-    display: block;
-    width: 20em;
-    margin: 45% auto;
+    display: flex;
+    justify-content:  center;
+    align-items:  center;
+    max-width: 55%;
+    flex-wrap:  wrap;
+}
+
+.outer-taskfield-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.outer-taskfield-label input:checked ~.task {
+    cursor: pointer;
+    margin-left: -2.5em;
+    padding-left: -5%;
+    width: 27em;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-bottom: 2em;
+    margin-bottom: 1em;
+}
+
+
+.label-column-1 input:checked ~.task {
+    background: linear-gradient(45deg, #6BB3EC 0%, #6ED4E3 100%);
+}
+
+.label-column-2 input:checked ~.task {
+    background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
 }
