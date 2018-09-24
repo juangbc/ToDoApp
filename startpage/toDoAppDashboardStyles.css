@@ -1,11 +1,12 @@
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 .weekday {
-    color: black;
+    color: #000000;
     font: normal 2.5em Helvetica;
-    margin-bottom: 0%;
+    margin-bottom: 0;
 }
 
 .date {
@@ -29,10 +30,14 @@ body {
 }
 
 .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    justify-content:space-around;
-    color: white;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    color: #FFFFFF;
     height: 70%;
     width: 100%;
     overflow: auto;
@@ -40,6 +45,8 @@ body {
 }
 
 .column {
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
     align-self: stretch;
     border-radius: 3%;
     max-height: 90%;
@@ -47,35 +54,48 @@ body {
     width: 26em;
     margin: 1%;
     min-height: 16em;
+    -webkit-box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
     box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
 }
 
 
 .column-1 {
+    background: -webkit-linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+    background: -o-linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
     background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
 }
 
 
 .column-2 {
+    background: -webkit-linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
+    background: -o-linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
     background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
 }
 
 
 .column-3 {
     background-color: #FFFFFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack:  center;
+    -ms-flex-pack:  center;
     justify-content:  center;
+    -webkit-box-align:  center;
+    -ms-flex-align:  center;
     align-items:  center;
 }
 
 @media (max-width: 1512px) {
     .column {
-        width: 26em;
-        max-width: 49%;
-        /* min-height: 16em; */
+        max-width: 26em;
+        width: 48%;
     }
 
     .flex-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         height: 70%;
     }
@@ -85,12 +105,18 @@ body {
     .column {
         width: 24em;
         max-width: 99%;
-        /* min-height: 16em; */
     }
 
     .flex-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         height: 70%;
+    }
+
+    .new-category-button-text {
+        /*TBD*/
     }
 }
 
@@ -99,11 +125,11 @@ body {
 }
 
 .task-checkbox-label input:checked ~.bin-icon-container .bin {
-     font-size: 20px;
-     display: inline;
-     left: 30%;
-     float: right;
-     padding-right: 2%;
+    font-size: 20px;
+    display: inline;
+    left: 30%;
+    float: right;
+    padding-right: 2%;
 }
 
 .task-checkbox-label input {
@@ -168,8 +194,14 @@ body {
     border: solid rgba(255, 255, 255, .2);
     border-width: 0.08em 0 0 0;
     width: 100%;
+    display:  -webkit-box;
+    display:  -ms-flexbox;
     display:  flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     height: 10%;
 }
@@ -182,6 +214,8 @@ body {
     border: none;
     cursor: pointer;
     overflow: hidden;
+    -webkit-box-pack:  center;
+    -ms-flex-pack:  center;
     justify-content:  center;
 }
 
@@ -204,12 +238,19 @@ body {
 
 .column-3-centered-container {
     color: #666666;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack:  center;
+    -ms-flex-pack:  center;
     justify-content:  center;
+    -webkit-box-align:  center;
+    -ms-flex-align:  center;
     align-items:  center;
-    max-width: 55%;
+    width: 55%;
+    -ms-flex-wrap:  wrap;
     flex-wrap:  wrap;
-    font-family: Helvetica;
+    font-size: 2em;
 }
 
 .outer-taskfield-label input {
@@ -229,9 +270,13 @@ body {
 
 
 .label-column-1 input:checked ~.task {
+    background: -webkit-linear-gradient(45deg, #6BB3EC 0%, #6ED4E3 100%);
+    background: -o-linear-gradient(45deg, #6BB3EC 0%, #6ED4E3 100%);
     background: linear-gradient(45deg, #6BB3EC 0%, #6ED4E3 100%);
 }
 
 .label-column-2 input:checked ~.task {
+    background: -webkit-linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
+    background: -o-linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
     background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
 }

@@ -1,0 +1,128 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.weekday {
+    color: #000000;
+    font: normal 2.5em Helvetica;
+    margin-bottom: 0;
+}
+
+.date {
+    color: #666666;
+    font: normal 1.5em Helvetica;
+    display: inline;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
+    background-size: cover;
+    height: 100%;
+    padding: 3em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #FFFFFF;
+    height: 70%;
+    width: 100%;
+    overflow: auto;
+    font: 100 1em Helvetica;
+}
+
+.column {
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
+    border-radius: 3%;
+    max-height: 90%;
+    height: 40em;
+    width: 26em;
+    margin: 1%;
+    min-height: 16em;
+    -webkit-box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
+    box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
+    background: -webkit-linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+    background: -o-linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+    background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+}
+
+.checkmark {
+    position: absolute;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background-color: white;
+    width: 1em;
+    height: 1em;
+    border-radius: 25%;
+}
+
+.checkmark {
+    content: "";
+    position: absolute;
+    display: inline;
+}
+
+.originalCheckbox {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.task-checkbox-label input:checked ~ .task-name {
+    text-decoration: line-through;
+    color: white;
+}
+
+.check-icon {
+    font-size: 1em;
+    color: #000000;
+    display: none;
+}
+
+.task-checkbox-label input:checked ~ .checkmark .check-icon{
+    display: block;
+}
+
+.task-name {
+    padding-left: 2em;
+    font-size: 1em;
+    position: absolute;
+    color: #666666;
+}
+
+.task {
+    padding-bottom: 2em;
+    position:  relative;
+}
+
+.category-title {
+    padding-bottom: 1em;
+    font-size: 1.5em;
+    font-weight:  100;
+}
+
+
+.bin {
+    display:none;
+}
+
+.task-checkbox-label input:checked ~.bin-icon-container .bin {
+    font-size: 20px;
+    display: block;
+    left: 30%;
+    float: right;
+    padding-right: 2%;
+}
