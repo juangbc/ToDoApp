@@ -1,3 +1,6 @@
+// Whole-script strict mode syntax
+"use strict";
+
 window.onload = main();
 
 function main() {
@@ -9,65 +12,67 @@ function main() {
     createCategories(userCategoriesArray);
 }
 
-function createColumnFromArray(i) {
-    var divcategory = document.createElement('div');
-    divcategory.className = "column column-"+i;
-    return divcategory;
+
+function createElement(varName,varType,className){
+    varName = document.createElement(varType);
+    varName.className = className;
+    return varName;
+}
+
+
+function createColumn(i) {
+    return createElement("divcategory","div","column column-"+i);
 }
 
 function createCheckIcon() {
-    var spancheck = document.createElement('span');
-    spancheck.className = "checkmark";
-    var icheck = document.createElement('i');
-    icheck.className = 'material-icons check-icon';
-    var textcheck = document.createTextNode('check');
-    icheck.appendChild(textcheck);
-    spancheck.appendChild(icheck);
-    return spancheck;
+    var checkIconContainer = createElement("checkIconContainer", "span", "checkmark");
+    var checkIcon = createElement("checkIcon","i","material-icons check-icon");
+    var checkIconTag = document.createTextNode('check');
+    checkIcon.appendChild(checkIconTag);
+    checkIconContainer.appendChild(checkIcon);
+    return checkIconContainer;
 }
 
-function createCheckbox() {
-    var checkbox = document.createElement('input');
+function createInnerCheckbox() {
+    var checkbox = createElement("checkbox","input","checkbox");
     checkbox.type = "checkbox";
-    checkbox.className = "originalCheckbox";
     return checkbox;
 }
 
 function createFooter() {
-    var divFooter = document.createElement('div');
-    divFooter.className = "footer-category";
-    var footerButton = document.createElement('button');
-    footerButton.className = "footer-button";
+    var footerButton = createElement("footerButton","button","footer-button");
     var textButton = document.createTextNode('+ NEUE AUFGABE');
     footerButton.appendChild(textButton);
+
+    var divFooter = createElement("divFooter","div","footer-category");
     divFooter.appendChild(footerButton);
     return divFooter;
 }
 
 function createTaskFromArray(x) {
-    var div = document.createElement('div');
-    div.className = "task";
+    var taskContainer = document.createElement('div');
+    taskContainer.className = "task";
     var label = document.createElement('label');
     label.className = "task-checkbox-label";
-    label.appendChild(createCheckbox());
+    label.appendChild(createInnerCheckbox());
     label.appendChild(createCheckIcon());
     var spanName = document.createElement('span');
     spanName.className = "task-name";
     spanName.appendChild(document.createTextNode(x));
     label.appendChild(spanName);
-    var divbin = document.createElement('div');
-    divbin.className ="bin-icon-container";
+    var binContainer = document.createElement('div');
+    binContainer.className ="bin-icon-container";
     var ibin = document.createElement('i');
     ibin.className = 'material-icons bin';
     var text = document.createTextNode('delete');
     ibin.appendChild(text);
-    divbin.appendChild(ibin);
-    label.appendChild(divbin);
-    div.appendChild(label);
-    return div;
+    binContainer.appendChild(ibin);
+    label.appendChild(binContainer);
+    taskContainer.appendChild(label);
+    return taskContainer;
 }
 
-function createUpperPartColumn(x) {
+function createUpperPartColumnFromArray(x) {
     var categoryHeader = document.createElement('h2');
     categoryHeader.className = "category-title";
     categoryHeader.appendChild(document.createTextNode(x));
@@ -82,7 +87,7 @@ function createOuterLabel(i) {
     outerLabel.className = "outer-taskfield-label outer-label-"+i;
     var outerCheckbox = document.createElement('input');
     outerCheckbox.type = "checkbox";
-    outerCheckbox.className = "originalCheckbox";
+    outerCheckbox.className = "checkbox";
     outerLabel.appendChild(outerCheckbox);
     return outerLabel
 }
@@ -92,7 +97,7 @@ function createDefaultColumn() {
     divDefault.className = "column column-default";
     var titleDefaultColumn = document.createElement('h2');
     var textDefaultColumn = document.createTextNode("+ Neue Kategorie");
-    titleDefaultColumn.className = "defaultTitleText";
+    titleDefaultColumn.className = "defaultColumnTitleText";
     titleDefaultColumn.appendChild(textDefaultColumn);
     divDefault.appendChild(titleDefaultColumn);
     return divDefault;
@@ -100,8 +105,8 @@ function createDefaultColumn() {
 
 function createCategories(x) {
     for (var j = 0; j < x.length; j++) {
-        var divcategory = createColumnFromArray(j);
-        var upperPartColumn = createUpperPartColumn(x[j][0]);
+        var divcategory = createColumn(j);
+        var upperPartColumn = createUpperPartColumnFromArray(x[j][0]);
         divcategory.appendChild(upperPartColumn);
 
         for (var i = 0; i < x[j].length; i++) {
