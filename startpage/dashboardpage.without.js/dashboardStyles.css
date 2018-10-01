@@ -1,0 +1,229 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.weekday {
+    color: black;
+    font: normal 2vw Helvetica;
+    margin-bottom: 0%;
+}
+
+.date {
+    color: #666666;
+    font: normal 1vw Helvetica;
+    display: inline;
+
+}
+
+.container {
+    background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.container-viewport {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+
+.container-burger-menu {
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 100%;
+    height: 10%;
+}
+.burger-icon {
+    display: block;
+    margin-left: 1%;
+    width: 1.5%;
+    height: 2%;
+    margin-bottom: 0.15%;
+    position: relative;
+    background: black;
+    border-radius: 2%;
+    z-index: 1;
+}
+
+.first-category {
+    border-radius: 3%;
+    background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
+    box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
+    width: 25%;
+    height: 80%;
+    margin-left: 10%;
+    float: left;
+    position: absolute;
+}
+
+.second-category {
+    border-radius: 3%;
+    background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
+    box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.3);
+    width: 25%;
+    height: 80%;
+    margin-left: 40%;
+    float: left;
+    position: absolute;
+}
+
+.container-categories {
+    margin-left: 5%;
+    width: 80%;
+    height: 70%;
+    position: relative;
+    top: 30%;
+}
+
+.category-title {
+    color: white;
+    font: 1.5vw Helvetica;
+    margin-left: 7%;
+    margin-bottom: 20%;
+}
+
+.tasks-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 20%;
+    color: white;
+    margin-bottom: 5%;
+    cursor: pointer;
+    font: 0.8vw Helvetica ;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tasks-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 7%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background-color: white;
+    width: 1em;
+    height: 1em;
+    border-radius: 25%;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.tasks-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.tasks-checkbox input:checked ~ .task-name {
+    text-decoration: line-through;
+}
+
+.tasks-checkbox input:checked ~ .material-icons {
+    display: inline;
+    float: right;
+    padding-right: 10%;
+    font-size: 1vw;
+}
+
+.tasks-checkbox .checkmark:after {
+    left: 20%;
+    width: 0.4em;
+    height: 0.8em;
+    border: solid black;
+    border-width: 0 0.2em 0.2em 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.footer-category {
+    border: solid rgba(255, 255, 255, .2);
+    border-width: 0.08em 0px 0px 0px;
+    position: absolute;
+    top: 85%;
+    width: 100%;
+    height: 15%;
+}
+
+.footer-button {
+    margin-top: 10%;
+    font-size: 0.9vw;
+    color: white;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 25%;
+    max-width: 50%;
+}
+
+.material-icons {
+    display:none;
+}
+
+.first-category .tasks-checkbox:hover {
+    cursor: pointer;
+    background: linear-gradient(45deg, #6BB3EC 0%, #6ED4E3 100%);
+    transform: scale(1.05);
+    height: 6%;
+    padding-top: 3%;
+}
+
+.second-category .tasks-checkbox:hover {
+    cursor: pointer;
+    background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
+    transform: scale(1.05);
+    height: 6%;
+    padding-top: 3%;
+}
+
+.new-category {
+    color: black;
+    border-radius: 3%;
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    width: 25%;
+    height: 80%;
+    margin-left: 70%;
+    float: left;
+    position: absolute;
+}
+
+.new-category-button {
+    position: absolute;
+    width: 100%;
+    font: normal 1vw Helvetica;
+    color: #666666;
+    top: 20%;
+    height: 60%;
+    background-color: transparent;
+    border-width: 0px;
+}
+
+
+.new-category-button-plus-sign {
+    width: 5%;
+    margin-left: 47.5%;
+    font-size: 2vw;
+}
+
+.new-category-button-text {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: -5%;
+}
