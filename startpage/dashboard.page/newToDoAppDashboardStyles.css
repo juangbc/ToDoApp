@@ -22,8 +22,8 @@ html {
 
 body {
     margin: 0;
-    background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
-    background-size: cover;
+ /*   background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
+    */background-size: cover;
     height: 100%;
     padding: 3em;
     width: 100%;
@@ -159,8 +159,10 @@ body {
 .column-upper-part {
     height: 90%;
     padding: 2em;
+    width: 100%;
 }
 
+/*
 .outer-taskfield-label input:checked ~.task {
     cursor: pointer;
     margin-left: -12%;
@@ -168,7 +170,7 @@ body {
     margin-bottom: 1em;
     padding-left: 12%;
     padding-top: 1em;
-}
+}*/
 
 @media (max-width: 1512px) {
     .column {
@@ -245,3 +247,6 @@ body {
 }
 
 
+.outer-taskfield-label {
+    max-height: 5%;
+}
