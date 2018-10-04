@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Categories Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript" src="toDoAppDashboard.js" async></script>
     <link rel="stylesheet" type="text/css" href="newToDoAppDashboardStyles.css">
 </head>
 <body>
@@ -21,11 +20,11 @@
             <div class="outer-taskfield-label">
                 <div id="task" class="task">
                     <label class="task-checkbox-label">
-                        <input type="checkbox">
-                    </label>
-                    <span class="checkmark">
+                        <input type="checkbox" class="checkbox">
+                        <span class="checkmark">
                             <i class="material-icons check-icon">check</i>
-                    </span>
+                        </span>
+                    </label>
                     <span class="task-name"></span>
                     <div class="bin-icon-container">
                         <i class="material-icons bin">delete</i>
@@ -35,6 +34,13 @@
         </div>
         <div class="footer-category">
             <button type="button" class="footer-button">+ neue Aufgabe</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="toDoAppDashboard.js"></script>
+    <div class="column">
+        <div class="blabla">
+            <h3 class="new-category-button-plus-sign">+</h3>
+            <h3 class="new-category-button-text">Neue Kategorie</h3>
         </div>
     </div>
 </div>

@@ -22,8 +22,8 @@ html {
 
 body {
     margin: 0;
- /*   background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
-    */background-size: cover;
+    background: url('https://images.unsplash.com/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5b26ebee11698a7b6b41799de68ad5a&auto=format&fit=crop&w=1355&q=80') no-repeat center;
+    background-size: cover;
     height: 100%;
     padding: 3em;
     width: 100%;
@@ -77,9 +77,9 @@ body {
 }
 
 .checkbox {
-    opacity: 0;
-    cursor: pointer;
-    position: absolute;
+    /* opacity: 0; */
+    /* cursor: pointer; */
+    /* position: absolute; */
 }
 
 .task-checkbox-label input:checked ~ .task-name {
@@ -162,7 +162,7 @@ body {
     width: 100%;
 }
 
-/*
+
 .outer-taskfield-label input:checked ~.task {
     cursor: pointer;
     margin-left: -12%;
@@ -170,7 +170,7 @@ body {
     margin-bottom: 1em;
     padding-left: 12%;
     padding-top: 1em;
-}*/
+}
 
 @media (max-width: 1512px) {
     .column {
@@ -214,7 +214,7 @@ body {
     background: linear-gradient(45deg, #6676FD 0%, #6FE5DE 100%);
 }
 
-.flex-container .column:nth-child(2) {
+.flex-container .column:nth-child(3) {
     background: -webkit-linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
     background: -o-linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
     background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
@@ -232,8 +232,7 @@ body {
     background: linear-gradient(225deg, #FFD189 0%, #FF6A72 100%);
 }
 
-
-.flex-container .column:last-child {
+.flex-container > .column:last-child {
     background-color: #FFFFFF;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -244,8 +243,9 @@ body {
     -webkit-box-align:  center;
     -ms-flex-align:  center;
     align-items:  center;
+    align-items:  center;
+    color: #666666;
 }
-
 
 .outer-taskfield-label {
     max-height: 5%;

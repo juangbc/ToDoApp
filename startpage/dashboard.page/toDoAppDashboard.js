@@ -3,15 +3,15 @@
 
 window.onload = main();
 
-
 function main() {
-    var categoryObject = new Category("category1","Foo bar",["Dings", "Das", "Dengs","Dongs"]);
+    var categoryObject = new Category("category1","Foo bar",["Dings", "Dangs", "Dengs","Dongs"]);
     var categoryObject1 = new Category("category2","Noch ein Titel",["Arbeit", "Struktur"]);
-    var arrayOfObjects = [categoryObject,categoryObject1];
-    saveCategories(arrayOfObjects);
-    cloneNecessaryColumnNodes(arrayOfObjects);
-    cloneNecessaryTaskNodes(arrayOfObjects);
-    setAllTasks(arrayOfObjects);
+    var categoriesArray = [categoryObject,categoryObject1];
+    saveCategories(categoriesArray);
+    cloneNecessaryColumnNodes(categoriesArray);
+    cloneNecessaryTaskNodes(categoriesArray);
+    setAllTaskNames(categoriesArray);
+    setAllCategoryTitles(categoriesArray);
 }
 
 function styleDiv() {
@@ -30,7 +30,7 @@ function Category(key,categoryTitle, taskName) {
 }
 
 function saveCategories (arrayOfObjects) {
-    var x = arrayOfObjects.length-1;
+    var x = arrayOfObjects.length;
     for (var i = 0; i < x; i++) {
         saveCategoriesIntoLocalStorage(arrayOfObjects[i].key,arrayOfObjects[i]);
     }
@@ -45,40 +45,35 @@ function readCategoriesFromLocalStorage(key) {
     return x;
 }
 
-function setTitleOfCategoryInDom(key) {
+function setTitleOfCategoryInDom(key,titleIndex) {
     var categoryTitle = readCategoriesFromLocalStorage(key).categoryTitle;
-    document.getElementsByClassName("category-title")[0].innerHTML = categoryTitle;
+    document.getElementsByClassName("category-title")[titleIndex].innerHTML = categoryTitle;
 }
 
-function setTaskNameInDom(key, index) {
+function setAllCategoryTitles(categoriesArray) {
+    var numberOfCategories = categoriesArray.length;
+    for (var i = 0; i < numberOfCategories; i++) {
+        setTitleOfCategoryInDom(categoriesArray[i].key,i);
+    }
+}
+
+function setTaskName(key, i, index) {
     var taskName = readCategoriesFromLocalStorage(key).taskName[index];
-    document.getElementsByClassName("task-name")[index].innerHTML = taskName;
+    document.getElementsByClassName("task-name")[index + i].innerHTML = taskName;
 }
 
-function setTaskNames(key) {
-    var x = readCategoriesFromLocalStorage(key).taskName.length;
-    for (var i = 0; i < x; i++) {
-        setTaskNameInDom(key,i);
+function setAllTaskNames(categoriesArray) {
+    var numberOfCategories = categoriesArray.length;
+    var totalTaskIndey = 0;
+    for (var i = 0; i < numberOfCategories; i++) {
+        var z = readCategoriesFromLocalStorage(categoriesArray[i].key).taskName.length;
+        for (var j = 0; j < z; j++) {
+            setTaskName(categoriesArray[i].key,totalTaskIndey,j);
+        }
+        totalTaskIndey = totalTaskIndey + z;
+        console.log(totalTaskIndey);
     }
 }
-
-function setAllTasks(arrayOfObjects) {
-    var x = arrayOfObjects.length;
-    for (var i = 0; i < x; i++) {
-        setTaskNames(arrayOfObjects[i].key);
-    }
-}
-/*
-function cloneNecessaryTaskNodes(key, columnIndex) {
-    var x = readCategoriesFromLocalStorage(key).taskName.length;
-    console.log(x);
-    for (var i = 1; i < x; i++) {
-        var itm = document.getElementsByClassName("outer-taskfield-label")[0];
-        var cln = itm.cloneNode(true);
-        document.getElementsByClassName("column-upper-part")[columnIndex].appendChild(cln);
-    }
-}
-*/
 
 function cloneNecessaryTaskNodes(arrayOfObjects) {
     var x = arrayOfObjects.length;
@@ -100,3 +95,5 @@ function cloneNecessaryColumnNodes(arrayOfObjects) {
         document.getElementsByClassName("flex-container")[0].appendChild(cln);
     }
 }
+
+
