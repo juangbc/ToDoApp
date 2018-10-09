@@ -14,18 +14,12 @@ function main() {
     setAllCategoryTitles(categoriesArray);
 }
 
-function styleDiv() {
-    document.getElementById("outer-taskfield-label").style.backgroundColor = "red";
-    document.body.style.backgroundColor = "#6BB3EC";
-    document.getElementsByClassName("task-name")[0].innerHTML = "Milk";
-}
-
 function Category(key,categoryTitle, taskName) {
     this.key = key;
     this.categoryTitle = categoryTitle;
     this.taskName = taskName;
-     for (var i = 0; i< taskName.length; i++) {
-     this.taskName[i] = taskName[i];
+    for (var i = 0; i< taskName.length; i++) {
+        this.taskName[i] = taskName[i];
      }
 }
 
@@ -80,7 +74,7 @@ function cloneNecessaryTaskNodes(arrayOfObjects) {
     for (var j = 0; j < x; j++) {
         var y = readCategoriesFromLocalStorage(arrayOfObjects[j].key).taskName.length;
         for (var i = 1; i < y; i++) {
-            var itm = document.getElementsByClassName("outer-taskfield-label")[0];
+            var itm = document.getElementsByClassName("task-container")[0];
             var cln = itm.cloneNode(true);
             document.getElementsByClassName("column-upper-part")[j].appendChild(cln);
         }

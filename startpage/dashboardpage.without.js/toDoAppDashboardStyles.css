@@ -254,13 +254,13 @@ body {
     font-size: 2em;
 }
 
-.outer-taskfield-label input {
+.task-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
-.outer-taskfield-label input:checked ~.task {
+.task-container input:checked ~.task {
     cursor: pointer;
     margin-left: -2.5em;
     width: 27em;
