@@ -93,34 +93,4 @@ function cloneNecessaryColumnNodes(arrayOfObjects) {
     }
 }
 
-/*
-function functionTest() {
-    if (!document.getElementsByClassName("task-container")[4].classList.contains("selected")) {
-        document.getElementsByClassName("task-container")[4].classList.add("selected");
-        document.getElementsByClassName("task-container")[4].style.marginLeft = "-2.5em";
-        document.getElementsByClassName("task-container")[4].style.marginBottom = "1em";
-        document.getElementsByClassName("task-container")[4].style.width = "27em";
-        document.getElementsByClassName("task-container")[4].style.paddingLeft = "2.5em";
-        document.getElementsByClassName("task-container")[4].style.paddingTop = "1em";
-        document.getElementsByClassName("task-container")[4].style.paddingBottom = "1em";
-        document.getElementsByClassName("task-container")[4].style.background =
-            '-webkit-linear-gradient(45deg, #6BB3EC 0%, #6ED4E3 100%)';
-       var x =  document.getElementsByClassName("task-container")[4].className;
-        console.log(x);
-
-       // SOMETHING WITH THIS
-    }
-    else
-    {
-        document.getElementsByClassName("task-container")[4].classList.remove("selected");
-     //   document.getElementById("theMac").style.all = "unset";
-        document.getElementsByClassName("task-container")[4].style.margin = "0";
-        document.getElementsByClassName("task-container")[4].style.width = "100%";
-        document.getElementsByClassName("task-container")[4].style.padding = "0";
-      //  document.getElementsByClassName("task-container")[4].style.background = "red";
-
-    }
-}
-
-*/
 
