@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Categories Dashboard</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="testStyles.css">
-</head>
-<body>
-    <div class="container-topleft">
-        <i class="material-icons">dehaze</i>
-        <h2 id="weekday"></h2>
-        <h2 id="day"></h2>
-        <h2 id="month"></h2>
-    </div>
-    <div class="flex-container" id="container">
-        <div class="column">
-            <div class="column-upper-part">
-                <h2 class="category-title">+ Neue Kategorie</h2>
-                <div class="task-container">
-                    <div class="task">
-                        <label class="task-checkbox-label">
-                            <input type="checkbox">
-                            <span class="checkmark">
-                                <i class="material-icons check-icon">check</i>
-                            </span>
-                            <span class="task-name"></span>
-                            <i class="material-icons bin">delete</i>
-                        </label>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Categories Dashboard</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="dashboardStyles.css">
+    </head>
+    <body>
+        <div class="container-topleft">
+            <i class="material-icons">dehaze</i>
+            <h2 id="weekday"></h2>
+            <h2 id="day"></h2>
+            <h2 id="month"></h2>
+        </div>
+        <div class="flex-container" id="container">
+            <div class="column">
+                <div class="column-upper-part">
+                    <h2 class="category-title">+ Neue Kategorie</h2>
+                    <div class="task-container">
+                        <div class="task">
+                            <label class="task-checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkmark">
+                                    <i class="material-icons check-icon">check</i>
+                                </span>
+                                <span class="task-name"></span>
+                                <i class="material-icons bin">delete</i>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-category">
-                <button type="button" class="footer-button">+ neue Aufgabe</button>
+                <div class="footer-category">
+                    <button type="button" class="footer-button">+ neue Aufgabe</button>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="date.js" async></script>
-    <script src="testDashboard.js"></script>
-    <script src="jquery.js"></script>
-</body>
+        <script src="date.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="dashboardPage.js"></script>
+        <script src="jquery.js"></script>
+    </body>
 </html>

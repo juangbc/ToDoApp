@@ -28,8 +28,7 @@ function Category(key,categoryTitle, taskName) {
 }
 
 function saveCategories (arrayOfObjects) {
-    var x = arrayOfObjects.length;
-    for (var i = 0; i < x; i++) {
+    for (var i = 0; i < arrayOfObjects.length; i++) {
         saveCategoriesIntoLocalStorage(arrayOfObjects[i].key,arrayOfObjects[i]);
     }
 }
@@ -49,8 +48,7 @@ function setTitleOfCategoryInDom(categoryKey,categoryIndex) {
 }
 
 function setAllCategoryTitles(categoriesArray) {
-    var numberOfCategories = categoriesArray.length;
-    for (var i = 0; i < numberOfCategories; i++) {
+    for (var i = 0; i < categoriesArray.length; i++) {
         setTitleOfCategoryInDom(categoriesArray[i].key,i);
     }
 }
@@ -72,10 +70,10 @@ function setAllTaskNames(categoriesArray) {
     }
 }
 
-function cloneNecessaryTaskNodes(arrayOfObjects) {
-    var x = arrayOfObjects.length;
-    for (var j = 0; j < x; j++) {
-        var y = readCategoriesFromLocalStorage(arrayOfObjects[j].key).taskName.length;
+function cloneNecessaryTaskNodes(categoriesArray) {
+    var numberOfCategories = categoriesArray.length;
+    for (var j = 0; j < numberOfCategories; j++) {
+        var y = readCategoriesFromLocalStorage(categoriesArray[j].key).taskName.length;
         for (var i = 1; i < y; i++) {
             var originalTaskNode = document.getElementsByClassName("task-container")[0];
             var clonedTaskNode = originalTaskNode.cloneNode(true);
@@ -84,13 +82,10 @@ function cloneNecessaryTaskNodes(arrayOfObjects) {
     }
 }
 
-function cloneNecessaryColumnNodes(arrayOfObjects) {
-    var x = arrayOfObjects.length;
-    for (var i = 0; i < x; i++) {
+function cloneNecessaryColumnNodes(categoriesArray) {
+    for (var i = 0; i < categoriesArray.length; i++) {
         var originalColumnNode = document.getElementsByClassName("column")[0];
         var clonedColumnNode = originalColumnNode.cloneNode(true);
         document.getElementsByClassName("flex-container")[0].appendChild(clonedColumnNode);
     }
 }
-
-
