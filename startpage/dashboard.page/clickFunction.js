@@ -10,77 +10,88 @@ function main() {
 }
 
 function addTheEventListeners() {
-    var divs = document.querySelectorAll('.task-container'), i;
-    for (i = 0; i < divs.length; i++) {
-        divs[i].addEventListener('click', functionClickOne);
-    }
+    var taskEventListeners = document.querySelectorAll('.task-container');
+    taskEventListeners.forEach(function (value) {
+        value.addEventListener('click', clickEvent);
+    });
 }
 
-function functionClickOne() {
-    var clickEvent = event.target;
-    if (!hasClass(clickEvent,"selected-task")) {
-        clickEvent.classList.add("selected-task");
-        var arrayOfElements = getSiblingsWithACertainClassName(clickEvent,"task-container");
-        addClassToAllElements(arrayOfElements,"sibling-of-selected-task");
+function clickEvent(event) {
+    event = event.target;
+
+    if (!hasClass(event,"selected-task")) {
+        addClass(event,"selected-task");
+        var arrayOfSiblings = getArrayOfSiblingsWithClassname(event,"task-container");
+        addClassToAllElements(arrayOfSiblings,"sibling-of-selected-task");
     }
     else {
-        removeClass(clickEvent, "selected-task");
+        removeClass(event, "selected-task");
 
-        if(doesAnyOfTheElementsHaveTheClass(clickEvent,"selected-task")){
-            clickEvent.classList.add("sibling-of-selected-task");
+        if(doesAnyOfTheSiblingsHaveTheClass(event,"selected-task")){
+            addClass(event,"sibling-of-selected-task");
         }
-        else removeClassOfAllElements(clickEvent,"sibling-of-selected-task");
+        else removeClassOfAllSiblings(event,"sibling-of-selected-task");
     }
 }
 
-function doesAnyOfTheElementsHaveTheClass(elem,className) {
+function hasClass(elem, className) {
+    if (elem.classList)
+        return elem.classList.contains(className);
+    else
+        return new RegExp('(^| )' + className + '( |$)', 'gi').test(elem.className);
+}
+
+function addClass(elem, className) {
+    if (elem.classList) elem.classList.add(className);
+    else if (!hasClass(elem, className)) elem.className += ' ' + className;
+}
+
+function getArrayOfSiblingsWithClassname(elem,classname) {
+    return Array.prototype.filter.call(elem.parentNode.children, function (sibling) {
+        if(sibling.className == classname) {
+            return true;
+        }
+    });
+}
+
+function addClassToAllElements(arrayOfElements,classToBeAdded) {
+    arrayOfElements.forEach(function (value) {
+        addClass(value,classToBeAdded);
+    });
+}
+
+function doesAnyOfTheSiblingsHaveTheClass(elem,className) {
     var arrayOfSiblings = getAllSiblings(elem);
-    for (var i = 0; i < arrayOfSiblings.length; ++i) {
-        if (arrayOfSiblings[i].classList.contains(className)) {
+
+    for (var i = 0; i < arrayOfSiblings.length; i++) {
+        if (hasClass(arrayOfSiblings[i],className)) {
             return true;
         }
     }
 }
 
-function removeClassOfAllElements(elem,classToBeRemoved) {
+function removeClassOfAllSiblings(elem,classToBeRemoved){
     var arrayOfSiblings = getAllSiblings(elem);
-    for (var i = 0; i < arrayOfSiblings.length; ++i) {
-        arrayOfSiblings[i].classList.remove(classToBeRemoved);
-    }
-}
-
-function addClassToAllElements(elem,classToBeAdded) {
-    for (var i = 0; i < elem.length; ++i) {
-        elem[i].classList.add(classToBeAdded);
-    }
-}
-
-function hasClass(el, className) {
-    return el.classList ? el.classList.contains(className) : new RegExp('\\b'+ className+'\\b').test(el.className);
+    arrayOfSiblings.forEach(function (value) {
+        removeClass(value,classToBeRemoved);
+    });
 }
 
 function getAllSiblings(elem) {
     return Array.prototype.filter.call(elem.parentNode.children, function (sibling) {
-        return true;
-    });
-}
-
-function getSiblingsWithACertainClassName(elem,filter) {
-    return Array.prototype.filter.call(elem.parentNode.children, function (sibling) {
-        if(sibling.className == filter) {
+        if(sibling) {
             return true;
         }
-        else
-            return false;
     });
 }
 
-function removeClass(el, className) {
-    if (el.classList) el.classList.remove(className);
-    else el.className = el.className.replace(new RegExp('\\b'+ className+'\\b', 'g'), '');
+function removeClass(elem, className) {
+    if (elem.classList) {
+        elem.classList.remove(className);
+    }
+    else {
+        elem.className = elem.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
 }
 
- function addClass(el, className) {
-     if (el.classList) el.classList.add(className);
-     else if (!hasClass(el, className)) el.className += ' ' + className;
- }
+
